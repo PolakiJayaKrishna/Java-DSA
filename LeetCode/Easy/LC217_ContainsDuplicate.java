@@ -14,10 +14,4 @@ public class LC217_ContainsDuplicate {
         }
         return false;  // no duplicates
     }
-
-    public static void main(String[] args) {
-        LC217_ContainsDuplicate obj = new LC217_ContainsDuplicate();
-        int[] nums = {1, 2, 3, 1};
-        System.out.println(obj.containsDuplicate(nums));
-    }
 }

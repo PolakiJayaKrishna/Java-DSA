@@ -14,12 +14,4 @@ public class LC344_ReverseString {
             right--;
         }
     }
-
-    // Optional main method to test locally
-    public static void main(String[] args) {
-        LC344_ReverseString obj = new LC344_ReverseString();
-        char[] s = {'h', 'e', 'l', 'l', 'o'};
-        obj.reverseString(s);
-        System.out.println(s); // prints "olleh"
-    }
 }
