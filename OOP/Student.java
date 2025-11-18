@@ -5,12 +5,13 @@ public class Student extends Person implements Payable{
     private long regNo;
     private String department;
 
-    Student(int marks , long regNo , String department , String name , int age){
-        super(name, age);
-        this.marks = marks;
-        this.department = department;
-        this.regNo = regNo;
-    }
+    public Student(String name, int age, int marks, long regNo, String department) {
+    super(name, age);
+    this.marks = marks;
+    this.regNo = regNo;
+    this.department = department;
+}
+
 
     @Override
     public void showRole(){
@@ -18,26 +19,29 @@ public class Student extends Person implements Payable{
     }
 
     @Override
-    public void payfees(){
+    public void payFees(){
         System.out.println("Student paid the fees successfully.");
     }
 
     public void setMarks(int marks){
         if(marks>100 || marks<0)
-            System.out.println("Marks Must be bewteen 0 and 100");
+             throw new IllegalArgumentException("Marks must be between 0 and 100");
         else
             this.marks = marks;
     }
 
     public void setRegNo(long regNo){
         if(regNo < 0)
-            System.out.println("Wrong Reg No...");
+             throw new IllegalArgumentException("Wrong Reg No...");
         else
             this.regNo = regNo;
     }
 
     public void setDepartment(String department){
-        this.department = department;
+        if(department == null || department.trim().isEmpty()){
+            throw new IllegalArgumentException("Department required");
+        }
+        this.department = department.trim();
     }
 
     public long getRegNo(){
@@ -54,8 +58,8 @@ public class Student extends Person implements Payable{
 
     public String toString() {
         return "Student { " + 
-        "Name = '" + name +
-        "' , Age = '" + age +
+        "Name = '" + getName() +
+        "' , Age = '" + getAge() +
         "' , RegNo = '" + regNo + 
         "' , Marks = '" + marks + 
         "' , Department = '" + department +"'"
@@ -65,11 +69,11 @@ public class Student extends Person implements Payable{
    @Override
     public void displayInfo(){
         System.out.println("Student {" +
-        "\n Name = '" + name + 
-        "' \n Age = '" + age +
+        "\n Name = '" + getName() + 
+        "' \n Age = '" + getAge() +
         "' \n RegNo = '" + regNo +
         "' \n Marks = '" + marks +
-        "'\n Department =' " + department + 
+        "'\n Department = '" + department + 
         "'\n }"
         );
     }
