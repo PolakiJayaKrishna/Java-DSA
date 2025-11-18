@@ -1,6 +1,6 @@
 package OOP;
 
-public class Student extends Person {
+public class Student extends Person implements Payable{
     private int marks;
     private long regNo;
     private String department;
@@ -10,6 +10,16 @@ public class Student extends Person {
         this.marks = marks;
         this.department = department;
         this.regNo = regNo;
+    }
+
+    @Override
+    public void showRole(){
+        System.out.println("Student..");
+    }
+
+    @Override
+    public void payfees(){
+        System.out.println("Student paid the fees successfully.");
     }
 
     public void setMarks(int marks){
