@@ -45,7 +45,9 @@ OOP/
  ├── Payable.java       (interface)
  └── Main.java          (menu-based console application)
 
- ![UML Diagram](OOP/uml.png)
+![UML Diagram](OOP/uml.png)
+
+
 
 
 🧠 OOP Concepts Used
