@@ -1,45 +1,54 @@
 package OOP;
 
-public class Student {
-	private String name;
-    private int age;
+public class Student extends Person {
     private int marks;
+    private long regNo;
+    private String department;
 
-    Student(String name , int age, int marks){
-        this.name = name;
-        this.age = age;
+    Student(int marks , long regNo , String department , String name , int age){
+        super(name, age);
         this.marks = marks;
+        this.department = department;
+        this.regNo = regNo;
     }
-    public void setName(String name){
-        if(name != null && name.length()!=0)
-            this.name = name;
-        else
-            System.out.println("Student name must not be Empty..!");
-    }
-    public void setAge(int age){
-        if(age<0)
-            System.out.println("Age Must be Greater than Zero...");
-        else
-            this.age = age;
-    }
+
     public void setMarks(int marks){
         if(marks>100 || marks<0)
             System.out.println("Marks Must be bewteen 0 and 100");
         else
             this.marks = marks;
     }
-    public String getString(){
-        return name;
+
+    public void setRegNo(long regNo){
+        if(regNo < 0)
+            System.out.println("Wrong Reg No...");
+        else
+            this.regNo = regNo;
     }
+
+    public void setDepartment(String department){
+        this.department = department;
+    }
+
+    public long getRegNo(){
+        return regNo;
+    }
+
+    public String getDepartment(){
+        return department;
+    }
+
     public int getMarks(){
         return marks;
     }
-    public int getAge(){
-        return age;
-    }
 
-    @Override
-    public String toString(){
-        return "Student{Name: '" + name + "' ,Age: '" + age + "' ,Marks: '" + marks + "'}";
+    public String toString() {
+        return "Student { " + 
+        "Name = '" + name +
+        "' , Age = '" + age +
+        "' , RegNo = '" + regNo + 
+        "' , Marks = '" + marks + 
+        "' , Department = '" + department +"'"
+        + '}';
     }
 }
