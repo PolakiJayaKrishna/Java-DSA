@@ -6,5 +6,6 @@ public class Main {
         // Create a student object using constructor
         Student student = new Student(99, 99220040690L, "CSE",  "Jaya Krishna", 21);
         System.out.println(student);
+        student.displayInfo();
     }
 }

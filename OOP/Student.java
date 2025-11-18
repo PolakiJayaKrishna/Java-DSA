@@ -51,4 +51,16 @@ public class Student extends Person {
         "' , Department = '" + department +"'"
         + '}';
     }
+
+   @Override
+    public void displayInfo(){
+        System.out.println("Student {" +
+        "\n Name = '" + name + 
+        "' \n Age = '" + age +
+        "' \n RegNo = '" + regNo +
+        "' \n Marks = '" + marks +
+        "'\n Department =' " + department + 
+        "'\n }"
+        );
+    }
 }
